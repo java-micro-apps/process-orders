@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: process-orders
+  name: process-orders
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: process-orders
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: process-orders
+    spec:
+      containers:
+        - image: guntukaramakrishna/process-orders:v2
+          name: process-orders
+          resources: {}
+status: {}
